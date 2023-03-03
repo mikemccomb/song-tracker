@@ -31,4 +31,10 @@ class SongsController < ApplicationController
     )
     render :show
   end
+
+  def delete
+    song = Song.find_by(id: params[:id])
+    song.destroy
+    render json: { message: "Sorry, this has been ejected into the sun." }
+  end
 end
